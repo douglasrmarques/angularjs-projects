@@ -1,0 +1,32 @@
+<div>
+    <h4>{{ messageCity }}</h4>
+</div>
+
+<hr />
+
+<div class="form-group">
+    <form>
+        <div class="form-group">
+            <label for="cityName">City Name:</label>
+            <input type="text" ng-model="city" class="form-control" id="cityName"/>
+        </div>
+
+        <button ng-click="addCity()" type="button" class="btn btn-primary">Add City</button>
+    </form>
+</div>
+
+<hr/>
+
+<div class="form-group" ng-repeat="obj in cityList">
+    <form>
+        <div class="form-group">
+            <label for="cityName">{{ obj.cityName }}</label>
+        </div>
+
+        <button ng-click="removeCity(obj.cityName)" type="button" class="btn btn-danger">Remove</button>
+        <button ng-click="getForecast(obj.cityName)" type="button" class="btn btn-primary">Get Forecast</button>
+    </form>
+    <hr/>
+</div>
+
+
