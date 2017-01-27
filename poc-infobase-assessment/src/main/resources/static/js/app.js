@@ -1,0 +1,1 @@
+var infobaseApp = angular.module("infobaseApp", ['ngRoute', 'ngResource', 'ngDraggable']);

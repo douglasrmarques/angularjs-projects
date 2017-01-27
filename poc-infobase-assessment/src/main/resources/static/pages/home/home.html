@@ -1,0 +1,64 @@
+<div class="container-fluid text-center" ng-show="isDisplayProductView">
+    <h1>Product Image</h1>
+
+    <div class="row">
+        <div ng-drop="true" class="col-sm-2 col-centered">
+            <ul class="draggable-objects">
+                <li ng-repeat="obj in listItems">
+                    <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                        <img class="img-responsive img-rounded" ng-src="{{ obj.imgUrl }}" width="304" data-allow-transform="true"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center" ng-show="isDisplayProductView">
+    <h4>Product Details</h4><br>
+    <div class="row">
+        <div ng-drop="true" ng-drop-success="onDropComplete($data,$event)" class="col-sm-4 col-centered">
+            <div class="thumbnail" style='height:50px;'>
+                <div ng-repeat="obj in droppedObjects" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragComplete($data,$event)">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="isDisplayProductView" style='width:350px;'>
+    <div class="container text-center" ng-show="!isDisplayAuditInput">
+        <h4>Audit Message</h4><br>
+        <div class="row">
+            <div ng-drop="true" ng-drop-success="onDropAuditMessage($data,$event)" class="col-sm-4 col-centered">
+                <div class="thumbnail" style='height:50px;'>
+                    <div ng-repeat="obj in droppedObjects" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragComplete($data,$event)">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center" ng-show="isDisplayAuditInput" style='width:350px;'>
+    <h4>Input Your Message Here</h4><br>
+    <form>
+        <div class="form-group alert alert-success" ng-show="isMessageSuccess">
+            <strong>Thank You!</strong>
+        </div>
+        <div class="form-group alert alert-danger" ng-show="isMessageFailure">
+            <strong>Message Failure! Please Try it Again Soon!</strong>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" ng-model="userName">
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea class="form-control" rows="5" id="message" ng-model="message"></textarea>
+        </div>
+        <button ng-click="sendAuditMessage()" type="submit" class="btn btn-default" id="btnMessage">Submit</button>
+    </form>
+</div>

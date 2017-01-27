@@ -1,0 +1,39 @@
+<h1>Product Detail</h1>
+<!-- <button ng-click="backHome()" type="button" class="btn btn-primary">Home</button> -->
+
+<div class="container-fluid" ng-repeat="obj in listItems">
+    <div class="panel panel-default">
+        <div class="panel-heading">{{ obj.title }}</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="img-responsive img-rounded" ng-src="{{ obj.imgUrl }}" width="304" data-allow-transform="true"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Name:</label>
+                </div>
+                <h6>{{ obj.productName }}</h6>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Product Description:</label>
+                </div>
+                <h6>{{ obj.description }}</h6>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Price:</label>
+                </div>
+                <h6>{{ obj.price }}</h6>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-primary">Buy</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

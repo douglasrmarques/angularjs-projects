@@ -1,0 +1,11 @@
+ad:
+  default:
+    url: http://ad.teste.com.br/abc123.txt
+
+spring:
+    h2:
+      console:
+        enabled: true
+        path: /console
+    datasource:
+        platform: h2
