@@ -21,7 +21,7 @@ public class ConfigAppBase extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.antMatcher("/**").authorizeRequests().antMatchers("/", "/ad/**", "/pages/product/**", "/pages/home/**", "/login**", "/webjars/**").permitAll().anyRequest()
+        http.antMatcher("/**").authorizeRequests().antMatchers("/", "/audit/**", "/ad/**", "/pages/product/**", "/pages/home/**", "/login**", "/webjars/**").permitAll().anyRequest()
             .authenticated().and().exceptionHandling()
             .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/")).and().logout()
             .logoutSuccessUrl("/").permitAll().and().csrf()
