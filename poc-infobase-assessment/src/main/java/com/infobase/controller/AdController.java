@@ -28,4 +28,14 @@ public class AdController {
         return adServiceFacade.getAdPartnerByName(partnerName);
     }
 
+    @RequestMapping(value = "/insertAdPartner", method = RequestMethod.POST)
+    public AdPartner insertAdPartner(@RequestBody AdPartner adPartner){
+        return adServiceFacade.insertAdPartner(adPartner);
+    }
+
+    @RequestMapping(value = "/updateAdPartner", method = RequestMethod.POST)
+    public AdPartner updateAdPartner(@RequestBody AdPartner adPartner){
+        return adServiceFacade.updateAdPartner(adPartner);
+    }
+
 }
